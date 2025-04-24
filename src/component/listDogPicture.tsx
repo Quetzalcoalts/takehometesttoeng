@@ -48,7 +48,7 @@ const ListDog = () => {
     if (error) {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center text-center">
-                <h1 className="text-3xl font-bold text-red-600 mb-4">Ras {`Ras "${query}" Tidak Ada`} Tidak Ada</h1>
+                <h1 className="text-3xl font-bold text-red-600 mb-4">{`Ras "${query}" Tidak Ada`} Tidak Ada</h1>
                 <Link href="/" className="text-blue-500 hover:underline text-normal">Kembali ke Beranda</Link>
             </div>
         );
@@ -61,7 +61,9 @@ const ListDog = () => {
                         <IoArrowBackSharp />
                         <p className='ml-2'>Back</p>
                     </button>
-                    <p className="text-lg font-semibold">Pencarian Untuk Ras {`Ras "${query}" Tidak Ada`}</p>
+                    <p className="text-lg font-semibold">{images.length > 0
+                        ? `Pencarian Untuk Ras: "${query}"`
+                        : `Ras "${query}" tidak ditemukan`}</p>
                 </div>
                 <button className='mr-2 flex items-center' onClick={handleNavigateToFavorites}>
                     <FcLike />

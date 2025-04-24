@@ -1,15 +1,12 @@
-"use client"
-import React, { Suspense } from "react";
-import ListDog from "@/component/listDogPicture";
+import React, { Suspense } from 'react';
+import ListDog from '@/component/listDogPicture';
 
-const DogPicture = () => {
+export default function DogPicture() {
     return (
         <div>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div>Loading gambar anjing...</div>}>
                 <ListDog />
             </Suspense>
         </div>
-    )
+    );
 }
-
-export default DogPicture
