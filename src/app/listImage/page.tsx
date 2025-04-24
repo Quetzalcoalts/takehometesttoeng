@@ -2,6 +2,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import Image from 'next/image';
+import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { IoArrowBackSharp } from "react-icons/io5";
 import { FcLike } from "react-icons/fc";
@@ -42,13 +43,13 @@ const ListDog = () => {
         }
 
         fetchDogs()
-    }, [])
+    }, [query])
 
     if (error) {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center text-center">
-                <h1 className="text-3xl font-bold text-red-600 mb-4">Ras "{query}" Tidak Ada</h1>
-                <a href="/" className="text-blue-500 hover:underline text-normal">Kembali ke Beranda</a>
+                <h1 className="text-3xl font-bold text-red-600 mb-4">Ras {`Ras "${query}" Tidak Ada`} Tidak Ada</h1>
+                <Link href="/" className="text-blue-500 hover:underline text-normal">Kembali ke Beranda</Link>
             </div>
         );
     }
@@ -60,7 +61,7 @@ const ListDog = () => {
                         <IoArrowBackSharp />
                         <p className='ml-2'>Back</p>
                     </button>
-                    <p className="text-lg font-semibold">Pencarian Untuk Ras "{query}"</p>
+                    <p className="text-lg font-semibold">Pencarian Untuk Ras {`Ras "${query}" Tidak Ada`}</p>
                 </div>
                 <button className='mr-2 flex items-center' onClick={handleNavigateToFavorites}>
                     <FcLike />
