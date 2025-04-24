@@ -12,8 +12,9 @@ export default function Home() {
     router.push(`/listImage?query=${query}`);
   };
   return (
-    <div className="w-full flex min-h-screen justify-center items-center">
-      <form className="bg-white p-6 rounded-lg shadow-lg w-full max-w-[50%]">
+    <div className="w-full flex min-h-screen justify-center items-center" style={{backgroundImage: `url(/bg-dog.svg)`}}>
+      <div className="absolute inset-0 bg-black/45 z-0"></div>
+      <form className="bg-white p-6 z-10 rounded-lg shadow-lg w-full max-w-[50%]">
         <label htmlFor="query" className="block text-sm font-medium text-gray-700">
           Search Query
         </label>

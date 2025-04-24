@@ -2,7 +2,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import Image from 'next/image';
-import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { IoArrowBackSharp } from "react-icons/io5";
 import { FcLike } from "react-icons/fc";
@@ -48,9 +47,8 @@ const ListDog = () => {
     if (error) {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center text-center">
-                <h1 className="text-4xl font-bold text-red-600 mb-4">404 - Not Found</h1>
-                <p className="text-lg text-gray-700 mb-6">{error}</p>
-                <a href="/" className="text-blue-500 hover:underline">Kembali ke Beranda</a>
+                <h1 className="text-3xl font-bold text-red-600 mb-4">Ras "{query}" Tidak Ada</h1>
+                <a href="/" className="text-blue-500 hover:underline text-normal">Kembali ke Beranda</a>
             </div>
         );
     }
@@ -69,7 +67,7 @@ const ListDog = () => {
                     <p className='ml-2'>Like</p>
                 </button>
             </div>
-            <div className="bg-white mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="bg-white mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {images.map((url, idx) => (
                     <Image
                         onClick={() => handleImageClick(url)}
