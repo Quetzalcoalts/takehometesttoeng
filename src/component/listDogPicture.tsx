@@ -61,9 +61,7 @@ const ListDog = () => {
                         <IoArrowBackSharp />
                         <p className='ml-2'>Back</p>
                     </button>
-                    <p className="text-lg font-semibold">{images.length > 0
-                        ? `Pencarian Untuk Ras: "${query}"`
-                        : `Ras "${query}" tidak ditemukan`}</p>
+                    <p className="text-lg font-semibold">{`Pencarian Untuk Ras: "${query}"`}</p>
                 </div>
                 <button className='mr-2 flex items-center' onClick={handleNavigateToFavorites}>
                     <FcLike />
